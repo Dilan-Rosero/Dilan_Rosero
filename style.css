@@ -1,0 +1,379 @@
+/* ==========================================================================
+   RESET GENERAL Y TIPOGRAFÍA
+   Estabiliza los márgenes predeterminados del navegador y aplica la fuente global
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Suaviza el desplazamiento al usar los enlaces del menú */
+}
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    color: #34495E; /* Color secundario aplicado al texto base */
+    background-color: #FFFFFF;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   COMPONENTES REUTILIZABLES (Contenedores y Títulos)
+   ========================================================================== */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px; /* Padding vertical amplio para dar aire entre secciones */
+}
+
+.section-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #2C3E50; /* Color principal para títulos destacados */
+}
+
+/* ==========================================================================
+   HEADER (Fondo: Principal Oscuro #2C3E50)
+   ========================================================================== */
+.main-header {
+    background-color: #2C3E50;
+    position: sticky; /* Mantiene la barra de navegación fija en la parte superior */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-placeholder {
+    width: 50px;
+    height: 50px;
+    background-color: #3498DB; /* Color de acento para resaltar el logotipo */
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    border-radius: 8px;
+}
+
+.navigation {
+    display: flex;
+    gap: 25px; /* Espaciado horizontal entre los elementos del menú */
+}
+
+.nav-link {
+    color: #ECF0F1; /* Color claro 1 para legibilidad sobre fondo oscuro */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+.nav-link:hover {
+    color: #3498DB; /* Destello con el color de acento al pasar el cursor */
+}
+
+/* ==========================================================================
+   HERO SECTION (Fondo: Claro 2 #FFFFFF)
+   ========================================================================== */
+.hero-section {
+    background-color: #FFFFFF;
+    padding: 100px 20px;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text-column {
+    flex: 1;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    color: #2C3E50;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    color: #34495E;
+    margin-bottom: 30px;
+}
+
+/* Botón de Llamada a la Acción (CTA) */
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #3498DB; /* Color de acento */
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px; /* Bordes completamente redondeados */
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #2C3E50; /* Cambia al color principal para crear contraste */
+    transform: translateY(-3px); /* Pequeño salto hacia arriba de carácter lúdico */
+}
+
+.hero-image-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-image {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%; /* Transforma la imagen en una geometría perfectamente circular */
+    border: 8px solid #ECF0F1; /* Marco sutil usando el color claro 1 */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   PROYECTOS SECTION (Fondo: Claro 1 #ECF0F1)
+   ========================================================================== */
+.projects-section {
+    background-color: #ECF0F1;
+}
+
+.projects-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* Separación adaptativa entre las tarjetas */
+}
+
+.project-card {
+    flex: 1;
+    background-color: #FFFFFF; /* Fondo de tarjeta blanco para contrastar con la sección */
+    border-radius: 12px;
+    overflow: hidden; /* Asegura que la imagen no sobresalga de las esquinas redondeadas */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05); /* Sombra sutil solicitada */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.project-thumb {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-title {
+    font-size: 1.4rem;
+    color: #2C3E50;
+    margin-bottom: 12px;
+}
+
+.project-description {
+    font-size: 0.95rem;
+    color: #34495E;
+}
+
+/* ==========================================================================
+   HABILIDADES SECTION (Fondo: Claro 2 #FFFFFF)
+   ========================================================================== */
+.skills-section {
+    background-color: #FFFFFF;
+}
+
+.skills-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.skill-card {
+    flex: 1;
+    background-color: #ECF0F1; /* Fondo claro 1 para contrastar con el fondo blanco de la sección */
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    border-bottom: 4px solid #34495E; /* Detalle lineal inferior con el color medio */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.skill-card:hover {
+    background-color: #3498DB; /* Vuelve la tarjeta completamente activa con el color de acento */
+    transform: scale(1.03);
+}
+
+.skill-card:hover .skill-name {
+    color: #FFFFFF; /* Cambia el texto a blanco cuando el fondo pasa a ser el color de acento */
+}
+
+.skill-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2C3E50;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================================================
+   CONTACTO SECTION (Fondo: Claro 1 #ECF0F1)
+   ========================================================================== */
+.contact-section {
+    background-color: #ECF0F1;
+    padding: 90px 20px;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.contact-pitch {
+    flex: 1;
+}
+
+.pitch-title {
+    font-size: 2.8rem;
+    color: #2C3E50;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.pitch-text {
+    font-size: 1.1rem;
+    color: #34495E;
+}
+
+.contact-form-wrapper {
+    flex: 1;
+    background-color: #FFFFFF;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.interactive-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Distribución vertical uniforme para los inputs */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2C3E50;
+}
+
+.form-input {
+    padding: 12px 15px;
+    border: 2px solid #ECF0F1;
+    border-radius: 8px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1rem;
+    color: #34495E;
+    background-color: #FFFFFF;
+    transition: border-color 0.3s ease;
+}
+
+/* Efecto de foco para guiar al usuario mientras escribe */
+.form-input:focus {
+    outline: none;
+    border-color: #3498DB; /* Iluminación con el color de acento al activarse */
+}
+
+.text-area {
+    resize: none; /* Desactiva el redimensionamiento manual para preservar la armonía del diseño */
+}
+
+.submit-button {
+    padding: 14px;
+    background-color: #3498DB;
+    color: #FFFFFF;
+    border: none;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #2C3E50;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   FOOTER (Fondo: Principal Oscuro #2C3E50)
+   ========================================================================== */
+.main-footer {
+    background-color: #2C3E50;
+    color: #ECF0F1;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.copyright {
+    font-size: 0.95rem;
+    color: #ECF0F1;
+}
+
+.social-links {
+    display: flex;
+    gap: 25px; /* Alineación horizontal limpia para las redes sociales */
+}
+
+.social-icon {
+    color: #ECF0F1;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #3498DB; /* Resalte visual con el color de acento */
+    display: inline-block;
+    transform: scale(1.1); /* Efecto de crecimiento sutil */
+}
